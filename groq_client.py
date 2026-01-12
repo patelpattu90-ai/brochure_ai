@@ -6,7 +6,7 @@ load_dotenv()
 
 API_KEY = os.getenv("GROQ_API_KEY")
 BASE_URL = "https://api.groq.com/openai/v1/chat/completions"
-MODEL = os.getenv("GROQ_MODEL", "llama3-70b-8192")
+MODEL = os.getenv("GROQ_MODEL", "llama3-8b-8192")
 
 
 def chat_with_groq(messages, temperature=0.2):
