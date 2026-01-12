@@ -42,8 +42,11 @@ Structure:
         ]
 
         with st.spinner("Generating brochure..."):
-            result = chat_with_groq(messages)
-         
+
+        if submit:
+        ...
+        else:
+        result = chat_with_groq(messages) 
         st.markdown("### 📄 Generated Brochure")
         st.markdown(result)
 
