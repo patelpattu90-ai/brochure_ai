@@ -1,5 +1,6 @@
 import streamlit as st
 from groq_client import chat_with_groq
+from io import BytesIO
 
 st.set_page_config(page_title="Brochure AI", layout="centered")
 st.title("📄 Brochure Generator")
@@ -42,6 +43,13 @@ Structure:
 
         with st.spinner("Generating brochure..."):
             result = chat_with_groq(messages)
-
-        st.subheader("📢 Generated Brochure")
+         
+        st.markdown("### 📄 Generated Brochure")
         st.markdown(result)
+
+        st.download_button(
+        label="⬇️ Download Brochure",
+        data=brochure,
+        file_name=f"{company_name}_brochure.txt",
+        mime="text/plain"
+)
